@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>כניסה למרכז צעירים</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f7c6d0, #f9e0c7);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            width: 380px;
+            padding: 30px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 180px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            direction: rtl;
+        }
+
+        .form-group {
+            text-align: right;
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            text-align: right;
+            box-sizing: border-box;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #c97a2b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #b66c24;
+        }
+
+        .error-message {
+            color: #b00020;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- תמונת מרכז צעירים -->
+    <img src="/static/photo.jpg" alt="מרכז צעירים">
+
+    <!-- הודעת שגיאה אם יש -->
+    {% if error %}
+        <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/">
+
+        <div class="form-group">
+            <label>שם משתמש</label>
+            <input type="text" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label>סיסמה</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit" class="login-btn">כניסה למערכת</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

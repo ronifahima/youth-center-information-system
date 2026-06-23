@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>מרכז צעירים</title>
+</head>
+
+<body style="margin:0; font-family:Arial; background:#f9e0c7;">
+
+<div style="display:flex; min-height:100vh;">
+
+    <!-- סרגל צד -->
+    <aside style="
+        width:220px;
+        background:#ffffff;
+        padding:30px 20px;
+        box-shadow:-2px 0 10px rgba(0,0,0,0.1);
+    ">
+        <h3 style="margin-top:0;">תפריט</h3>
+
+        <ul style="list-style:none; padding:0; line-height:2.5;">
+            <li>
+                <a href="/profile" style="text-decoration:none; color:#000;">
+                    אזור אישי
+                </a>
+            </li>
+            <li>
+                <a href="/open_request" style="text-decoration:none; color:#000;">
+                    פתיחת פנייה
+                </a>
+            </li>
+            <li>
+                <a href="/my_requests" style="text-decoration:none; color:#000;">
+                    הפניות שלי
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- תוכן מתחלף -->
+    <main style="flex:1; padding:40px;">
+        {% block content %}{% endblock %}
+    </main>
+
+</div>
+
+</body>
+</html>
